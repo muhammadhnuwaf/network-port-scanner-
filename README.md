@@ -60,15 +60,7 @@ python scanner.py
 ---
 
 ## 📷 Example Output
-
-```text
-🔍 Scanning scanme.nmap.org from port 1 to 100
-
-✅ Port 22 - OPEN (SSH)
-✅ Port 80 - OPEN (HTTP)
-```
-
----
+![Scanner Demo](screenshots/scanner-demo.png)
 
 ## 📚 What I Learned
 
