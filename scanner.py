@@ -19,13 +19,6 @@ import socket
 import time
 from datetime import datetime
 
-# ================================================================
-# STUDENT NOTE: Port numbers and their common services
-# This dictionary maps port numbers to well-known services
-# Learning this is essential for the CompTIA Security+ exam
-# and for network security roles.
-# ================================================================
-
 services = {
     # File Transfer & Remote Access
     20: "FTP-Data",    # File transfer data channel
@@ -61,19 +54,14 @@ def get_service(port):
     """
     return services.get(port, "Unknown")
 
-# ================================================================
 # PROGRAM STARTS HERE
-# ================================================================
 
 print("=" * 60)
 print("    PROFESSIONAL PORT SCANNER")
 print("    Muhammadh Nuwaf - HND Cyber Security")
 print("=" * 60)
 
-# ----------------------------------------------------------------
 # STEP 1: Get target from user
-# ----------------------------------------------------------------
-
 target = input("Enter IP or domain (e.g., scanme.nmap.org or 192.168.1.1): ")
 
 # Validate that the target exists (resolves to an IP address)
@@ -85,9 +73,8 @@ except:
     input("Press Enter to exit...")
     exit()
 
-# ----------------------------------------------------------------
 # STEP 2: Get port range with error handling
-# ----------------------------------------------------------------
+
 # STUDENT NOTE: Ports range from 1 to 65535.
 # - 1-1023: Well-known ports (system services)
 # - 1024-49151: Registered ports (applications)
@@ -107,10 +94,8 @@ while True:
     except ValueError:
         print("❌ Error: Please enter valid numbers only\n")
 
-# ----------------------------------------------------------------
-# STEP 3: Perform the scan
-# ----------------------------------------------------------------
 
+# STEP 3: Perform the scan
 print(f"\n🔍 Scanning {target} from port {start_port} to {end_port}")
 print("⏳ Scanning in progress... (this may take a while)")
 print("💡 Tip: Scan smaller ranges like 1-100 for faster results\n")
@@ -155,9 +140,7 @@ for port in range(start_port, end_port + 1):
 end_time = time.time()
 duration = end_time - start_time
 
-# ----------------------------------------------------------------
 # STEP 4: Display results
-# ----------------------------------------------------------------
 
 print("\n" + "=" * 60)
 print("SCAN COMPLETE")
@@ -179,9 +162,7 @@ else:
 print(f"\n⏱️  Total scan time: {duration:.2f} seconds")
 print(f"📅 Scan completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-# ----------------------------------------------------------------
 # STEP 5: Save results to file (optional)
-# ----------------------------------------------------------------
 
 save = input("\n💾 Save results to file? (y/n): ").lower()
 if save == 'y':
@@ -225,9 +206,8 @@ if save == 'y':
     print(f"✅ Report saved to: {filename}")
     print(f"   Location: {__file__} folder")
 
-# ----------------------------------------------------------------
 # STUDENT REFLECTION (for coursework/portfolio)
-# ----------------------------------------------------------------
+
 print("\n" + "=" * 60)
 print("📚 WHAT I LEARNED FROM THIS PROJECT:")
 print("=" * 60)
