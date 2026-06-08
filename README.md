@@ -39,12 +39,6 @@ Port scanning is an important part of:
 
 ## 🚀 How to Run
 
-### Clone Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/python-port-scanner.git
-```
-
 ### Open Project Folder
 
 ```bash
